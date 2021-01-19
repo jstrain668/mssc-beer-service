@@ -21,4 +21,3 @@ public class BeerInventoryDto {
     private UUID beerId;
     private Integer quantityOnHand;
 }
-
