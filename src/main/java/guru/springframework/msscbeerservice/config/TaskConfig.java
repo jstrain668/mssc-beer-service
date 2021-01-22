@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 
-//@EnableAsync
-//@EnableScheduling
-//@Configuration
+@EnableAsync
+@EnableScheduling
+@Configuration
 public class TaskConfig {
 
     @Bean
