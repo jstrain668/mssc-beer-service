@@ -1,9 +1,9 @@
 package guru.springframework.msscbeerservice.web.controller;
 
-import guru.springframework.msscbeerservice.services.BeerService;
 import guru.sfg.brewery.model.BeerDto;
 import guru.sfg.brewery.model.BeerPagedList;
 import guru.sfg.brewery.model.BeerStyleEnum;
+import guru.springframework.msscbeerservice.services.BeerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -32,6 +32,7 @@ public class BeerController {
                                                    @RequestParam(value = "beerName", required = false) String beerName,
                                                    @RequestParam(value = "beerStyle", required = false) BeerStyleEnum beerStyle,
                                                    @RequestParam(value = "showInventoryOnHand", required = false) Boolean showInventoryOnHand){
+
         if (showInventoryOnHand == null) {
             showInventoryOnHand = false;
         }
@@ -44,7 +45,7 @@ public class BeerController {
             pageSize = DEFAULT_PAGE_SIZE;
         }
 
-        BeerPagedList beerList = beerService.listBeers(beerName, beerStyle, PageRequest.of(pageNumber, pageSize),showInventoryOnHand);
+        BeerPagedList beerList = beerService.listBeers(beerName, beerStyle, PageRequest.of(pageNumber, pageSize), showInventoryOnHand);
 
         return new ResponseEntity<>(beerList, HttpStatus.OK);
     }
@@ -61,7 +62,6 @@ public class BeerController {
 
     @GetMapping("beerUpc/{upc}")
     public ResponseEntity<BeerDto> getBeerByUpc(@PathVariable("upc") String upc){
-
         return new ResponseEntity<>(beerService.getByUpc(upc), HttpStatus.OK);
     }
 

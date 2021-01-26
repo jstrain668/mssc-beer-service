@@ -14,9 +14,9 @@ import java.util.List;
 /**
  * Created by jt on 2019-05-12.
  */
-public class BeerPagedList extends PageImpl<BeerDto>  implements Serializable {
+public class BeerPagedList extends PageImpl<BeerDto> implements Serializable {
 
-    static final long serialVersionUID = -2_302_567_572_747_835_595L;
+    static final long serialVersionUID = 1114715135625836949L;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public BeerPagedList(@JsonProperty("content") List<BeerDto> content,

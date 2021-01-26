@@ -8,7 +8,9 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * Created by jt on 12/2/19.
+ */
 @RequiredArgsConstructor
 @Component
 public class BeerOrderValidationListener {
@@ -22,8 +24,8 @@ public class BeerOrderValidationListener {
 
         jmsTemplate.convertAndSend(JmsConfig.VALIDATE_ORDER_RESPONSE_QUEUE,
                 ValidateOrderResult.builder()
-                        .isValid(isValid)
-                        .orderId(validateOrderRequest.getBeerOrder().getId())
-                        .build());
+                    .isValid(isValid)
+                    .orderId(validateOrderRequest.getBeerOrder().getId())
+                    .build());
     }
 }
