@@ -31,7 +31,7 @@ services:
       - jms
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://netflix:eureka@eureka:8761/eureka/
-      SPRING_PROFILES_ACTIVE: local-discovery,localmysql
+      SPRING_PROFILES_ACTIVE: localmysql,local-discovery
       SPRING_APPLICATION_JSON: '{"spring": {"cloud": {"config": {"uri": "http://MyUserName:MySecretPassword@config:8888"}}}}'
       SPRING_ZIPKIN_BASEURL: http://zipkin
       SPRING_ARTEMIS_HOST: jms
@@ -56,7 +56,7 @@ services:
       - inventory-service
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://netflix:eureka@eureka:8761/eureka/
-      SPRING_PROFILES_ACTIVE: local-discovery,localmysql
+      SPRING_PROFILES_ACTIVE: localmysql,local-discovery
       SPRING_APPLICATION_JSON: '{"spring": {"cloud": {"config": {"uri": "http://MyUserName:MySecretPassword@config:8888"}}}}'
       SPRING_ZIPKIN_BASEURL: http://zipkin
       SPRING_ARTEMIS_HOST: jms
@@ -72,7 +72,7 @@ services:
       - beer-service
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://netflix:eureka@eureka:8761/eureka/
-      SPRING_PROFILES_ACTIVE: local-discovery,localmysql
+      SPRING_PROFILES_ACTIVE: localmysql,local-discovery
       SPRING_APPLICATION_JSON: '{"spring": {"cloud": {"config": {"uri": "http://MyUserName:MySecretPassword@config:8888"}}}}'
       SPRING_ZIPKIN_BASEURL: http://zipkin
       SPRING_ARTEMIS_HOST: jms
