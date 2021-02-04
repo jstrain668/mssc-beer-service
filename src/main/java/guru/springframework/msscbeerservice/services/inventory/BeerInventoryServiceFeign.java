@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Slf4j
-@Profile("local-discovery")
+@Profile({"local-discovery", "digitalocean"})
 @RequiredArgsConstructor
 @Service
 public class BeerInventoryServiceFeign implements BeerInventoryService {
